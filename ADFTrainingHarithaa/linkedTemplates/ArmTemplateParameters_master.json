@@ -20,6 +20,9 @@
 		"BlobStorageHarithaa_connectionString": {
 			"value": ""
 		},
+		"Onprem_connectionString": {
+			"value": ""
+		},
 		"SqlServer_Onprem_connectionString": {
 			"value": ""
 		},
