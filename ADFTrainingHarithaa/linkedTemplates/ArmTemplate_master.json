@@ -1,0 +1,145 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADFTrainingHarithaa"
+		},
+		"AzureFunc_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunc'"
+		},
+		"AzureFunctionLS_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunctionLS'"
+		},
+		"AzureSqlDB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDB'"
+		},
+		"BlobStorageHar2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlobStorageHar2'"
+		},
+		"BlobStorageHarithaa_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlobStorageHarithaa'"
+		},
+		"SqlServer_Onprem_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer_Onprem'"
+		},
+		"dataflowLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'dataflowLS'"
+		},
+		"AzureFunc_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://demofuncapp456.azurewebsites.net"
+		},
+		"AzureFunctionLS_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://demofuncapp456.azurewebsites.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADFTrainingHarithaa_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureFunc_functionKey": {
+						"value": "[parameters('AzureFunc_functionKey')]"
+					},
+					"AzureFunctionLS_functionKey": {
+						"value": "[parameters('AzureFunctionLS_functionKey')]"
+					},
+					"BlobStorageHarithaa_connectionString": {
+						"value": "[parameters('BlobStorageHarithaa_connectionString')]"
+					},
+					"dataflowLS_connectionString": {
+						"value": "[parameters('dataflowLS_connectionString')]"
+					},
+					"AzureSqlDB_connectionString": {
+						"value": "[parameters('AzureSqlDB_connectionString')]"
+					},
+					"BlobStorageHar2_connectionString": {
+						"value": "[parameters('BlobStorageHar2_connectionString')]"
+					},
+					"SqlServer_Onprem_connectionString": {
+						"value": "[parameters('SqlServer_Onprem_connectionString')]"
+					},
+					"AzureFunc_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunc_properties_typeProperties_functionAppUrl')]"
+					},
+					"AzureFunctionLS_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunctionLS_properties_typeProperties_functionAppUrl')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADFTrainingHarithaa_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFTrainingHarithaa_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADFTrainingHarithaa_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFTrainingHarithaa_ArmTemplate_1')]"
+			]
+		}
+	]
+}
