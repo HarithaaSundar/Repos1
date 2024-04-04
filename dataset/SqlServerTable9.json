@@ -1,0 +1,61 @@
+{
+	"name": "SqlServerTable9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer_Onprem",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "AccountKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ParentAccountKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AccountCodeAlternateKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ParentAccountCodeAlternateKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AccountDescription",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AccountType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operator",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CustomMembers",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ValueType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CustomMemberOptions",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DimAccount"
+		}
+	}
+}
