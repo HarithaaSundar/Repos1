@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=trainingserverharithaa.database.windows.net;initial catalog=TrainingDatabase;user id=Harithaa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwZjc0MmVhMy1hMmFiLTQ1NmItODA0OS0yZDk4ZDQzYjVlMTkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IRharithaa",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

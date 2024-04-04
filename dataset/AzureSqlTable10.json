@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlTable10",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dataflowLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Harithaa",
+			"table": "ProductDetails"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

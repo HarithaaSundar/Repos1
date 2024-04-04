@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlTable4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Harithaa",
+			"table": "Promotion"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

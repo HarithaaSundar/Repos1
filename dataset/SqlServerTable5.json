@@ -1,0 +1,28 @@
+{
+	"name": "SqlServerTable5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer_Onprem",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@split(dataset().TableName,'.')[0]",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@split(dataset().TableName,'.')[1]",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

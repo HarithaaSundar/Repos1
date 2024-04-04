@@ -1,0 +1,9 @@
+{
+	"name": "ADFTrainingHarithaa",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ac935456-eb16-4dad-bc63-3f1e870e5259",
+		"tenantId": "d83a6143-104d-46a7-987d-230c352019f1"
+	}
+}
