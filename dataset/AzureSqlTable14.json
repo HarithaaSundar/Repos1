@@ -1,0 +1,21 @@
+{
+	"name": "AzureSqlTable14",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDB",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sinkTable": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "@split(dataset().sinkTable,'.')[0]",
+			"table": "@split(dataset().sinkTable,'.')[1]"
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "SqlServerTable6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer_Onprem",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Tables": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "@split(dataset().Tables,'.')[0]",
+			"table": "@split(dataset().Tables,'.')[1]"
+		}
+	}
+}
