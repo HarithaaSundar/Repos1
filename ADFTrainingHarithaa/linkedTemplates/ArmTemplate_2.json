@@ -13,6 +13,1392 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable10')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "AccountKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ParentAccountKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AccountCodeAlternateKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ParentAccountCodeAlternateKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AccountDescription",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AccountType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Operator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CustomMembers",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ValueType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CustomMemberOptions",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "DimAccount"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "AccountKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ParentAccountKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AccountCodeAlternateKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ParentAccountCodeAlternateKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AccountDescription",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AccountType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Operator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CustomMembers",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ValueType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CustomMemberOptions",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "DimAccount"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "DepartmentGroupKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ParentDepartmentGroupKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "DepartmentGroupName",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "DimDepartmentGroup"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "PromotionKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PromotionAlternateKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "EnglishPromotionName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishPromotionName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchPromotionName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DiscountPct",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "EnglishPromotionType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishPromotionType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchPromotionType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EnglishPromotionCategory",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishPromotionCategory",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchPromotionCategory",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StartDate",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "EndDate",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "MinQty",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MaxQty",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "DimPromotion"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"TableName": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": {
+						"value": "@split(dataset().TableName,'.')[0]",
+						"type": "Expression"
+					},
+					"table": {
+						"value": "@split(dataset().TableName,'.')[1]",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"Tables": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": {
+						"value": "@split(dataset().Tables,'.')[0]",
+						"type": "Expression"
+					},
+					"table": {
+						"value": "@split(dataset().Tables,'.')[1]",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "CustomerKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "GeographyKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CustomerAlternateKey",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Title",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FirstName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiddleName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LastName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "NameStyle",
+						"type": "bit"
+					},
+					{
+						"name": "BirthDate",
+						"type": "date"
+					},
+					{
+						"name": "MaritalStatus",
+						"type": "nchar"
+					},
+					{
+						"name": "Suffix",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Gender",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EmailAddress",
+						"type": "nvarchar"
+					},
+					{
+						"name": "YearlyIncome",
+						"type": "money",
+						"precision": 19,
+						"scale": 4
+					},
+					{
+						"name": "TotalChildren",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "NumberChildrenAtHome",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "EnglishEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EnglishOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "HouseOwnerFlag",
+						"type": "nchar"
+					},
+					{
+						"name": "NumberCarsOwned",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "AddressLine1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AddressLine2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Phone",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DateFirstPurchase",
+						"type": "date"
+					},
+					{
+						"name": "CommuteDistance",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "DimCustomer"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable8')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "CustomerKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "GeographyKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CustomerAlternateKey",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Title",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FirstName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiddleName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LastName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "NameStyle",
+						"type": "bit"
+					},
+					{
+						"name": "BirthDate",
+						"type": "date"
+					},
+					{
+						"name": "MaritalStatus",
+						"type": "nchar"
+					},
+					{
+						"name": "Suffix",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Gender",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EmailAddress",
+						"type": "nvarchar"
+					},
+					{
+						"name": "YearlyIncome",
+						"type": "money",
+						"precision": 19,
+						"scale": 4
+					},
+					{
+						"name": "TotalChildren",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "NumberChildrenAtHome",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "EnglishEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EnglishOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "HouseOwnerFlag",
+						"type": "nchar"
+					},
+					{
+						"name": "NumberCarsOwned",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "AddressLine1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AddressLine2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Phone",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DateFirstPurchase",
+						"type": "date"
+					},
+					{
+						"name": "CommuteDistance",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "DimCustomer"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable9')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer_Onprem",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "AccountKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ParentAccountKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AccountCodeAlternateKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ParentAccountCodeAlternateKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AccountDescription",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AccountType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Operator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CustomMembers",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ValueType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CustomMemberOptions",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "DimAccount"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable8",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						},
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable9",
+								"type": "DatasetReference"
+							},
+							"name": "source2"
+						},
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable12",
+								"type": "DatasetReference"
+							},
+							"name": "source3"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable11",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [
+						{
+							"name": "join1"
+						},
+						{
+							"name": "derivedColumn1"
+						},
+						{
+							"name": "sort1"
+						},
+						{
+							"name": "select1"
+						},
+						{
+							"name": "rank1"
+						},
+						{
+							"name": "filter1"
+						},
+						{
+							"name": "split1"
+						},
+						{
+							"name": "lookup1"
+						},
+						{
+							"name": "select2"
+						},
+						{
+							"name": "surrogateKey1"
+						},
+						{
+							"name": "join2"
+						},
+						{
+							"name": "aggregate1"
+						},
+						{
+							"name": "pivot1"
+						},
+						{
+							"name": "unpivot1"
+						},
+						{
+							"name": "join3"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          ProductID as integer,",
+						"          Name as string,",
+						"          ProductNumber as string,",
+						"          Color as string,",
+						"          StandardCost as decimal(19,4),",
+						"          ListPrice as decimal(19,4),",
+						"          Size as string,",
+						"          Weight as decimal(8,2),",
+						"          ProductCategoryID as integer,",
+						"          ProductModelID as integer,",
+						"          SellStartDate as timestamp,",
+						"          SellEndDate as timestamp,",
+						"          DiscontinuedDate as timestamp,",
+						"          ThumbNailPhoto as binary,",
+						"          ThumbnailPhotoFileName as string,",
+						"          rowguid as string,",
+						"          ModifiedDate as timestamp",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     isolationLevel: 'READ_UNCOMMITTED',",
+						"     format: 'table') ~> source1",
+						"source(output(",
+						"          ProductCategoryID as integer,",
+						"          ParentProductCategoryID as integer,",
+						"          Name as string,",
+						"          rowguid as string,",
+						"          ModifiedDate as timestamp",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     isolationLevel: 'READ_UNCOMMITTED',",
+						"     format: 'table') ~> source2",
+						"source(output(",
+						"          ProductID as integer,",
+						"          Name as string,",
+						"          ProductNumber as string,",
+						"          Color as string,",
+						"          StandardCost as decimal(19,4),",
+						"          ListPrice as decimal(19,4),",
+						"          Size as string,",
+						"          Weight as decimal(8,2),",
+						"          ProductCategoryID as integer,",
+						"          ProductModelID as integer,",
+						"          SellStartDate as timestamp,",
+						"          SellEndDate as timestamp,",
+						"          DiscontinuedDate as timestamp,",
+						"          ThumbNailPhoto as binary,",
+						"          ThumbnailPhotoFileName as string,",
+						"          rowguid as string,",
+						"          ModifiedDate as timestamp",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     isolationLevel: 'READ_UNCOMMITTED',",
+						"     format: 'table') ~> source3",
+						"source1, source2 join(source1@ProductCategoryID == source2@ProductCategoryID,",
+						"     joinType:'left',",
+						"     matchType:'exact',",
+						"     ignoreSpaces: false,",
+						"     broadcast: 'auto')~> join1",
+						"join1 derive(StartYear = year(SellStartDate)) ~> derivedColumn1",
+						"derivedColumn1 sort(asc(source2@Name, true)) ~> sort1",
+						"sort1 select(mapColumn(",
+						"          ProductID,",
+						"          Name = source1@Name,",
+						"          ProductNumber,",
+						"          Color,",
+						"          StandardCost,",
+						"          ListPrice,",
+						"          Size,",
+						"          Weight,",
+						"          ProductCategoryID = source1@ProductCategoryID,",
+						"          ProductModelID,",
+						"          SellStartDate,",
+						"          SellEndDate,",
+						"          DiscontinuedDate,",
+						"          ThumbNailPhoto,",
+						"          ThumbnailPhotoFileName,",
+						"          rowguid = source1@rowguid,",
+						"          ModifiedDate = source1@ModifiedDate,",
+						"          ProductCategoryID = source2@ProductCategoryID,",
+						"          ParentProductCategoryID,",
+						"          Name = source2@Name,",
+						"          rowguid = source2@rowguid,",
+						"          ModifiedDate = source2@ModifiedDate,",
+						"          StartYear",
+						"     ),",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> select1",
+						"select1 rank(asc(Name, true),",
+						"     output({Product Ranking} as long)) ~> rank1",
+						"select2 filter(ListPrice >1100) ~> filter1",
+						"rank1 split(StartYear < 2006,",
+						"     disjoint: false) ~> split1@(Before2006, From2006)",
+						"split1@Before2006, source1 lookup(split1@Before2006@ProductID == source1@ProductID,",
+						"     multiple: false,",
+						"     pickup: 'any',",
+						"     broadcast: 'auto')~> lookup1",
+						"lookup1 select(mapColumn(",
+						"          ProductID = split1@Before2006@ProductID,",
+						"          Name = split1@Before2006@Name,",
+						"          ProductNumber = split1@Before2006@ProductNumber,",
+						"          Color = split1@Before2006@Color,",
+						"          StandardCost = split1@Before2006@StandardCost,",
+						"          ListPrice = split1@Before2006@ListPrice,",
+						"          Size = split1@Before2006@Size,",
+						"          Weight = split1@Before2006@Weight,",
+						"          ProductCategoryID = split1@Before2006@ProductCategoryID,",
+						"          ProductModelID = split1@Before2006@ProductModelID,",
+						"          SellStartDate = split1@Before2006@SellStartDate,",
+						"          SellEndDate = split1@Before2006@SellEndDate,",
+						"          DiscontinuedDate = split1@Before2006@DiscontinuedDate,",
+						"          ThumbNailPhoto = split1@Before2006@ThumbNailPhoto,",
+						"          ThumbnailPhotoFileName = split1@Before2006@ThumbnailPhotoFileName,",
+						"          rowguid = split1@Before2006@rowguid,",
+						"          ModifiedDate = split1@Before2006@ModifiedDate,",
+						"          ParentProductCategoryID,",
+						"          StartYear,",
+						"          {Product Ranking},",
+						"          ProductID = source1@ProductID,",
+						"          Name = source1@Name,",
+						"          ProductNumber = source1@ProductNumber,",
+						"          Color = source1@Color,",
+						"          StandardCost = source1@StandardCost,",
+						"          ListPrice = source1@ListPrice,",
+						"          Size = source1@Size,",
+						"          Weight = source1@Weight,",
+						"          ProductCategoryID = source1@ProductCategoryID,",
+						"          ProductModelID = source1@ProductModelID,",
+						"          SellStartDate = source1@SellStartDate,",
+						"          SellEndDate = source1@SellEndDate,",
+						"          DiscontinuedDate = source1@DiscontinuedDate,",
+						"          ThumbNailPhoto = source1@ThumbNailPhoto,",
+						"          ThumbnailPhotoFileName = source1@ThumbnailPhotoFileName,",
+						"          rowguid = source1@rowguid,",
+						"          ModifiedDate = source1@ModifiedDate",
+						"     ),",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> select2",
+						"filter1 keyGenerate(output({Product } as long),",
+						"     startAt: 1L,",
+						"     stepValue: 1L) ~> surrogateKey1",
+						"source2, source3 join(source2@ProductCategoryID == source3@ProductCategoryID,",
+						"     joinType:'inner',",
+						"     matchType:'exact',",
+						"     ignoreSpaces: false,",
+						"     broadcast: 'auto')~> join2",
+						"join2 aggregate(groupBy(source2@ProductCategoryID),",
+						"     ProductID = count(ProductID)) ~> aggregate1",
+						"aggregate1 pivot(groupBy(ProductCategoryID),",
+						"     pivotBy(ProductID),",
+						"     ProductCount = count(ProductID),",
+						"     columnNaming: '$N$V',",
+						"     lateral: true) ~> pivot1",
+						"pivot1 unpivot(output(",
+						"          UnpivotedColumn as string,",
+						"          UnpivotColumn as long",
+						"     ),",
+						"     ungroupBy(ProductCategoryID),",
+						"     lateral: true,",
+						"     ignoreNullPivots: false) ~> unpivot1",
+						"surrogateKey1, unpivot1 join(select2@ProductCategoryID == unpivot1@ProductCategoryID,",
+						"     joinType:'inner',",
+						"     matchType:'exact',",
+						"     ignoreSpaces: false,",
+						"     broadcast: 'auto')~> join3",
+						"join3 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow2')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable16",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						},
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable16",
+								"type": "DatasetReference"
+							},
+							"name": "source2"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable19",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						},
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable18",
+								"type": "DatasetReference"
+							},
+							"name": "sink2"
+						}
+					],
+					"transformations": [
+						{
+							"name": "derivedColumn1"
+						},
+						{
+							"name": "filter1"
+						},
+						{
+							"name": "derivedColumn2"
+						},
+						{
+							"name": "filter2"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          CustomerKey as integer,",
+						"          GeographyKey as integer,",
+						"          CustomerAlternateKey as string,",
+						"          Title as string,",
+						"          FirstName as string,",
+						"          MiddleName as string,",
+						"          LastName as string,",
+						"          NameStyle as boolean,",
+						"          BirthDate as date,",
+						"          MaritalStatus as string,",
+						"          Suffix as string,",
+						"          Gender as string,",
+						"          EmailAddress as string,",
+						"          YearlyIncome as decimal(19,4),",
+						"          TotalChildren as integer,",
+						"          NumberChildrenAtHome as integer,",
+						"          EnglishEducation as string,",
+						"          SpanishEducation as string,",
+						"          FrenchEducation as string,",
+						"          EnglishOccupation as string,",
+						"          SpanishOccupation as string,",
+						"          FrenchOccupation as string,",
+						"          HouseOwnerFlag as string,",
+						"          NumberCarsOwned as integer,",
+						"          AddressLine1 as string,",
+						"          AddressLine2 as string,",
+						"          Phone as string,",
+						"          DateFirstPurchase as date,",
+						"          CommuteDistance as string",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     isolationLevel: 'READ_UNCOMMITTED',",
+						"     format: 'table') ~> source1",
+						"source(output(",
+						"          CustomerKey as integer,",
+						"          GeographyKey as integer,",
+						"          CustomerAlternateKey as string,",
+						"          Title as string,",
+						"          FirstName as string,",
+						"          MiddleName as string,",
+						"          LastName as string,",
+						"          NameStyle as boolean,",
+						"          BirthDate as date,",
+						"          MaritalStatus as string,",
+						"          Suffix as string,",
+						"          Gender as string,",
+						"          EmailAddress as string,",
+						"          YearlyIncome as decimal(19,4),",
+						"          TotalChildren as integer,",
+						"          NumberChildrenAtHome as integer,",
+						"          EnglishEducation as string,",
+						"          SpanishEducation as string,",
+						"          FrenchEducation as string,",
+						"          EnglishOccupation as string,",
+						"          SpanishOccupation as string,",
+						"          FrenchOccupation as string,",
+						"          HouseOwnerFlag as string,",
+						"          NumberCarsOwned as integer,",
+						"          AddressLine1 as string,",
+						"          AddressLine2 as string,",
+						"          Phone as string,",
+						"          DateFirstPurchase as date,",
+						"          CommuteDistance as string",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     isolationLevel: 'READ_UNCOMMITTED',",
+						"     format: 'table') ~> source2",
+						"source1 derive(FullName = FirstName+\" \"+MiddleName+\" \"+LastName) ~> derivedColumn1",
+						"derivedColumn1 filter(Gender == \"M\") ~> filter1",
+						"source2 derive(FullName = FirstName+\" \"+MiddleName+\" \"+LastName) ~> derivedColumn2",
+						"derivedColumn2 filter(Gender == \"F\") ~> filter2",
+						"filter1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1",
+						"filter2 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink2"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BlobSharing')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"wildcardFileName": "*",
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 1
+										},
+										"sink": {
+											"name": "Column1",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 2
+										},
+										"sink": {
+											"name": "Column2",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 3
+										},
+										"sink": {
+											"name": "Column3",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 4
+										},
+										"sink": {
+											"name": "Column4",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 5
+										},
+										"sink": {
+											"name": "Column5",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 6
+										},
+										"sink": {
+											"name": "Column6",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DelimitedText5",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable7",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2024-04-02T06:55:20Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyingData_1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Lookup1",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "SELECT * FROM dbo.tableMapping WHERE IsActive = 1",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"dataset": {
+								"referenceName": "AzureSqlTable13",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"firstRowOnly": false
+						}
+					},
+					{
+						"name": "TablesCopying",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "Lookup1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Lookup1').output.value",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Copy data1",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "SqlServerSource",
+											"queryTimeout": "02:00:00",
+											"partitionOption": "None"
+										},
+										"sink": {
+											"type": "AzureSqlSink",
+											"writeBehavior": "insert",
+											"sqlWriterUseTableLock": false,
+											"tableOption": "autoCreate",
+											"disableMetricsCollection": false
+										},
+										"enableStaging": false,
+										"translator": {
+											"type": "TabularTranslator",
+											"typeConversion": true,
+											"typeConversionSettings": {
+												"allowDataTruncation": true,
+												"treatBooleanAsNumber": false
+											}
+										}
+									},
+									"inputs": [
+										{
+											"referenceName": "SqlServerTable6",
+											"type": "DatasetReference",
+											"parameters": {
+												"Tables": "@item().TableName"
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "AzureSqlTable20",
+											"type": "DatasetReference",
+											"parameters": {
+												"SinkTables": "@item().TableName"
+											}
+										}
+									]
+								}
+							]
+						}
+					},
+					{
+						"name": "Data flow1",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [
+							{
+								"activity": "TablesCopying",
+								"dependencyConditions": [
+									"Completed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflow2",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"source1": {},
+									"source2": {},
+									"sink1": {},
+									"sink2": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/dataflow2')]",
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable6')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DataFlowTransformation')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -90,7 +1476,9 @@
 				"annotations": [],
 				"lastPublishTime": "2024-04-03T09:42:42Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/MultipleTablesCopy')]",
@@ -213,7 +1601,75 @@
 				"annotations": [],
 				"lastPublishTime": "2024-04-02T05:40:38Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable5')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SuccessFailure')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlServerSource",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SqlServerTable10",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable22",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable10')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
@@ -449,7 +1905,11 @@
 				"annotations": [],
 				"lastPublishTime": "2024-04-02T16:51:57Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable2')]",
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable3')]",
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable4')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger1')]",
@@ -507,7 +1967,9 @@
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/CopyingData_1')]"
+			]
 		}
 	]
 }

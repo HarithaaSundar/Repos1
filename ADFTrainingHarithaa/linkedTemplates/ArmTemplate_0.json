@@ -23,18 +23,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'dataflowLS'"
 		},
-		"AzureSqlDB_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDB'"
-		},
-		"BlobStorageHar2_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'BlobStorageHar2'"
-		},
-		"SqlServer_Onprem_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SqlServer_Onprem'"
-		},
 		"AzureFunc_properties_typeProperties_functionAppUrl": {
 			"type": "string",
 			"defaultValue": "https://demofuncapp456.azurewebsites.net"
@@ -354,6 +342,232 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable15')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "dataflowLS",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/dataflowLS')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable16')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "dataflowLS",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "CustomerKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "GeographyKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CustomerAlternateKey",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Title",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FirstName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiddleName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LastName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "NameStyle",
+						"type": "bit"
+					},
+					{
+						"name": "BirthDate",
+						"type": "date"
+					},
+					{
+						"name": "MaritalStatus",
+						"type": "nchar"
+					},
+					{
+						"name": "Suffix",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Gender",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EmailAddress",
+						"type": "nvarchar"
+					},
+					{
+						"name": "YearlyIncome",
+						"type": "money",
+						"precision": 19,
+						"scale": 4
+					},
+					{
+						"name": "TotalChildren",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "NumberChildrenAtHome",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "EnglishEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchEducation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EnglishOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SpanishOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FrenchOccupation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "HouseOwnerFlag",
+						"type": "nchar"
+					},
+					{
+						"name": "NumberCarsOwned",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "AddressLine1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AddressLine2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Phone",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DateFirstPurchase",
+						"type": "date"
+					},
+					{
+						"name": "CommuteDistance",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "DimCustomer"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/dataflowLS')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable17')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "dataflowLS",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "Harithaa",
+					"table": "CopiedTables"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/dataflowLS')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable18')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "dataflowLS",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "Harithaa",
+					"table": "CustomerFemale"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/dataflowLS')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable19')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "dataflowLS",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "Harithaa",
+					"table": "CustomerMale"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/dataflowLS')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlTable8')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -603,271 +817,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/BlobStorageHarithaa')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText4')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "BlobStorageHarithaa",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"container": "active"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/BlobStorageHarithaa')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlDB')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureSqlDB_connectionString')]"
-				},
-				"connectVia": {
-					"referenceName": "IRharithaa",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/IRharithaa')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BlobStorageHar2')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('BlobStorageHar2_connectionString')]"
-				},
-				"connectVia": {
-					"referenceName": "IRharithaa",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/IRharithaa')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SqlServer_Onprem')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('SqlServer_Onprem_connectionString')]"
-				},
-				"connectVia": {
-					"referenceName": "IRharithaa",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/IRharithaa')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DeleteFile')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "CopyFile",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobStorageWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DelimitedText2",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Copy data",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "CopyFile",
-								"dependencyConditions": [
-									"Completed"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"wildcardFileName": "*",
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobStorageWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText3",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DelimitedText4",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Delete1",
-						"type": "Delete",
-						"dependsOn": [
-							{
-								"activity": "Copy data",
-								"dependencyConditions": [
-									"Completed"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataset": {
-								"referenceName": "DelimitedText4",
-								"type": "DatasetReference",
-								"parameters": {}
-							},
-							"enableLogging": false,
-							"storeSettings": {
-								"type": "AzureBlobStorageReadSettings",
-								"recursive": true,
-								"enablePartitionDiscovery": false
-							}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2024-04-02T05:40:38Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
-				"[concat(variables('factoryId'), '/datasets/DelimitedText2')]",
-				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]",
-				"[concat(variables('factoryId'), '/datasets/DelimitedText4')]"
 			]
 		}
 	]

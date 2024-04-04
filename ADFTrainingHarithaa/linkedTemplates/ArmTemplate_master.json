@@ -82,15 +82,6 @@
 					"dataflowLS_connectionString": {
 						"value": "[parameters('dataflowLS_connectionString')]"
 					},
-					"AzureSqlDB_connectionString": {
-						"value": "[parameters('AzureSqlDB_connectionString')]"
-					},
-					"BlobStorageHar2_connectionString": {
-						"value": "[parameters('BlobStorageHar2_connectionString')]"
-					},
-					"SqlServer_Onprem_connectionString": {
-						"value": "[parameters('SqlServer_Onprem_connectionString')]"
-					},
 					"AzureFunc_properties_typeProperties_functionAppUrl": {
 						"value": "[parameters('AzureFunc_properties_typeProperties_functionAppUrl')]"
 					},
@@ -114,6 +105,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDB_connectionString": {
+						"value": "[parameters('AzureSqlDB_connectionString')]"
+					},
+					"BlobStorageHar2_connectionString": {
+						"value": "[parameters('BlobStorageHar2_connectionString')]"
+					},
+					"SqlServer_Onprem_connectionString": {
+						"value": "[parameters('SqlServer_Onprem_connectionString')]"
 					}
 				}
 			},
