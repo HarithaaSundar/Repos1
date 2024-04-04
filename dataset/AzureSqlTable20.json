@@ -5,8 +5,17 @@
 			"referenceName": "AzureSqlDB",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"SinkTables": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": "@split(dataset().SinkTables,'.')[0]",
+			"table": "@split(dataset().SinkTables,'.')[1]"
+		}
 	}
 }
