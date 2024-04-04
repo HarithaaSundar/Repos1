@@ -1,0 +1,150 @@
+{
+	"name": "dataflow2",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable16",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable16",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable19",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable18",
+						"type": "DatasetReference"
+					},
+					"name": "sink2"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "filter1"
+				},
+				{
+					"name": "derivedColumn2"
+				},
+				{
+					"name": "filter2"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          CustomerKey as integer,",
+				"          GeographyKey as integer,",
+				"          CustomerAlternateKey as string,",
+				"          Title as string,",
+				"          FirstName as string,",
+				"          MiddleName as string,",
+				"          LastName as string,",
+				"          NameStyle as boolean,",
+				"          BirthDate as date,",
+				"          MaritalStatus as string,",
+				"          Suffix as string,",
+				"          Gender as string,",
+				"          EmailAddress as string,",
+				"          YearlyIncome as decimal(19,4),",
+				"          TotalChildren as integer,",
+				"          NumberChildrenAtHome as integer,",
+				"          EnglishEducation as string,",
+				"          SpanishEducation as string,",
+				"          FrenchEducation as string,",
+				"          EnglishOccupation as string,",
+				"          SpanishOccupation as string,",
+				"          FrenchOccupation as string,",
+				"          HouseOwnerFlag as string,",
+				"          NumberCarsOwned as integer,",
+				"          AddressLine1 as string,",
+				"          AddressLine2 as string,",
+				"          Phone as string,",
+				"          DateFirstPurchase as date,",
+				"          CommuteDistance as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
+				"source(output(",
+				"          CustomerKey as integer,",
+				"          GeographyKey as integer,",
+				"          CustomerAlternateKey as string,",
+				"          Title as string,",
+				"          FirstName as string,",
+				"          MiddleName as string,",
+				"          LastName as string,",
+				"          NameStyle as boolean,",
+				"          BirthDate as date,",
+				"          MaritalStatus as string,",
+				"          Suffix as string,",
+				"          Gender as string,",
+				"          EmailAddress as string,",
+				"          YearlyIncome as decimal(19,4),",
+				"          TotalChildren as integer,",
+				"          NumberChildrenAtHome as integer,",
+				"          EnglishEducation as string,",
+				"          SpanishEducation as string,",
+				"          FrenchEducation as string,",
+				"          EnglishOccupation as string,",
+				"          SpanishOccupation as string,",
+				"          FrenchOccupation as string,",
+				"          HouseOwnerFlag as string,",
+				"          NumberCarsOwned as integer,",
+				"          AddressLine1 as string,",
+				"          AddressLine2 as string,",
+				"          Phone as string,",
+				"          DateFirstPurchase as date,",
+				"          CommuteDistance as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source2",
+				"source1 derive(FullName = FirstName+\" \"+MiddleName+\" \"+LastName) ~> derivedColumn1",
+				"derivedColumn1 filter(Gender == \"M\") ~> filter1",
+				"source2 derive(FullName = FirstName+\" \"+MiddleName+\" \"+LastName) ~> derivedColumn2",
+				"derivedColumn2 filter(Gender == \"F\") ~> filter2",
+				"filter1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1",
+				"filter2 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink2"
+			]
+		}
+	}
+}

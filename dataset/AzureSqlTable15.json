@@ -1,0 +1,12 @@
+{
+	"name": "AzureSqlTable15",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dataflowLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
